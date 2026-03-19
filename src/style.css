@@ -1,2 +1,69 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rancho&display=swap');
+
+:root{
+   
+    --bg:white;
+}
+
+*{
+ 
+    margin: 0;
+}
+
+
+
+
+.rancho-regular {
+  font-family: "Rancho", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fieldset,h1,h2,h3,h4,h5,h6,p,legend{
+    padding: 0 !important;
+    margin: 0 !important;
+
+}
+/* .fieldset
+{
+      width: full;
+}
+.fieldset input{
+        width: full;
+} */
+
+.coffetitle{
+    text-shadow: -2px 1px 12px rgba(55,65,81,0.6);
+
+}
+
+.raleway {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+}
+
+.btn-need{
+    background: #d2b48c;
+    color: white;
+}
+
+
+/* সরাসরি ক্লাস ব্যবহার করুন যা DaisyUI কে টেক্কা দিবে */
+.btn.btn-artisan {
+  background-color: #E3B577 !important;
+  color: white !important;
+  border: 2px solid #E3B577 !important;
+  border-radius: 0 !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* হোভার ইফেক্ট */
+.btn.btn-artisan:hover {
+  background-color: transparent !important;
+  color: #1B1A1A !important; /* আপনার থিম অনুযায়ী কালার */
+  border-color: #331A15 !important; /* বর্ডার কালার যেন স্পষ্ট হয় */
+}
