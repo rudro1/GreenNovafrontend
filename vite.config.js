@@ -8,5 +8,5 @@ export default defineConfig({
     tailwindcss(),
     react(),
   ],
-  base: '/GreenNovafrontend/', // এটি plugins এর বাইরে হবে
+// এটি plugins এর বাইরে হবে
 })

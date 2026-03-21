@@ -67,3 +67,40 @@
   color: #1B1A1A !important; /* আপনার থিম অনুযায়ী কালার */
   border-color: #331A15 !important; /* বর্ডার কালার যেন স্পষ্ট হয় */
 }
+
+
+
+
+
+
+
+/* এটি সরাসরি ইনপুট বাটনের হোভারকে টার্গেট করবে */
+
+
+
+/* ১. বাটন এবং টেক্সট পুরোটার কালার ট্রান্সপারেন্ট করে দেওয়া */
+
+
+/* ২. বাটনের ওপর কাস্টম স্টাইল এবং নাম বসানো */
+.custom-file-input::file-selector-button {
+  background-color: #331A15;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+/* ৩. আসল 'No file chosen' লেখাটি সরানোর জন্য 'content' এর ব্যবহার */
+.custom-file-input::after {
+  content: 'Upload Image'; /* এখানে আপনার পছন্দের নাম দিন */
+  color: #767575; /* আপনার ইনপুটের টেক্সট কালার */
+  margin-left: 10px;
+  font-family: inherit;
+}
+
+/* ৪. হোভার ইফেক্ট */
+.custom-file-input::file-selector-button:hover {
+  background-color: #4d2a22 !important;
+}

@@ -1,9 +1,12 @@
 import React from 'react';
  import {Eye,Pen,Trash} from 'lucide-react'
  import { Link } from 'react-router';
-const Productcard = ({product}) => {
+import Swal from 'sweetalert2';
+const Productcard = ({product,handledelete}) => {
+
+
     return (
-     <div className="flex flex-row justify-between gap-5 w-full  py-10 px-5 bg-[#f5f4f2] items-center  shadow-sm  ">
+     <div className="flex flex-row justify-between gap-5 w-full z-15  py-10 px-5 bg-[#f5f4f2] items-center  shadow-sm  ">
 <div>
       <figure className=''>
     <img
@@ -45,16 +48,16 @@ const Productcard = ({product}) => {
     <div className="w-full flex flex-col items-end gap-y-3">
         
         {/* View Button */}
-        <button className="group btn btn-square border-none bg-[#D2B48C] hover:bg-[#b89a74]">
+        <Link to={`/Coffeedetails/${product._id}`} className="group btn btn-square border-none bg-[#D2B48C] hover:bg-[#b89a74]">
             <Eye 
                 size={20} 
                 color="white" 
                 className="transition-transform duration-300 group-hover:[transform:scale(1.25)_rotate(12deg)]" 
             />
-        </button>
+        </Link>
 
         {/* Edit Button */}
-      <Link to={'/addcoffee'} className="group btn btn-square border-none bg-[#3C393B] hover:bg-[#2a282a]">
+      <Link to={`/updatecoffee/${product._id}`} className="group btn btn-square border-none bg-[#3C393B] hover:bg-[#2a282a]">
             <Pen 
                 size={18} 
                 color="white" 
@@ -63,13 +66,13 @@ const Productcard = ({product}) => {
      </Link>
 
         {/* Delete Button */}
-        <button className="group btn btn-square border-none bg-[#EA4744] hover:bg-[#c43a37]">
+        <Link onClick={()=>handledelete(product._id)} className="group btn btn-square border-none bg-[#EA4744] hover:bg-[#c43a37]">
             <Trash 
                 size={20} 
                 color="white" 
                 className="transition-transform duration-300 group-hover:animate-bounce" 
             />
-        </button>
+        </Link>
 
     </div>
 </div>

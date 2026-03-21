@@ -7,6 +7,8 @@ import Home from "../Pages/Home";
 import Mainlayout from "../Layout/Mainlayout";
 import Addcoffee from "../Component/Addcoffee";
 import UpdateCoffee from "../Component/UpdateCoffee";
+import Coffeedetails from "../Component/CoffeeDetails/Coffeedetails";
+
 
 let router=createBrowserRouter([
 
@@ -37,10 +39,29 @@ let router=createBrowserRouter([
     }
 },
 
+{
+path:'/Coffeedetails/:id',
+loader:async({params})=>await fetch(`http://localhost:3000/specifiedcoffies/${params.id}`).then(res=>res.json()),
+lazy: async()=>{
+    const module=await import('../Component/CoffeeDetails/Coffeedetails');
+    return  {
+        Component:module.default || module.Coffeedetails
+    }
+}
+
+},
+
     {
 
-        path: '/updatecoffee',
-        Component : UpdateCoffee
+        path: '/updatecoffee/:id',
+        loader:async({params})=> await fetch(`http://localhost:3000/specifiedcoffies/${params.id}`).then(res=>res.json()),
+        lazy:async ()=>{
+const module=await import('../Component/UpdateCoffee');
+return{
+    Component: module.default || module.UpdateCoffee
+}
+        }
+    
     }
 ]
 
